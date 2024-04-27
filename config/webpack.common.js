@@ -33,6 +33,11 @@ module.exports = {
             {
                 test: /\.vue$/,
                 loader: 'vue-loader'
+            },
+            //CSS loaders. Make possible import css files as js modules 
+            {
+                test: /\.css$/,
+                use: ['vue-style-loader', 'css-loader']
             }
         ]
     }
