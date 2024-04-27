@@ -13,7 +13,7 @@ module.exports = {
     //Output: result of the bundle after webpack run
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__base, 'dist'),
+        path: path.resolve(__base, 'docs'),
         clean: true
     },
 
