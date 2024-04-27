@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 
 //Just to help us with directories and folders path
 const __base = path.resolve(__dirname, '..');
@@ -22,6 +23,17 @@ module.exports = {
             title: 'Minimal Vue Webpack',
             favicon: path.resolve(__src, 'static', 'favicon.ico'),
             template: path.resolve(__src, 'templates', 'index.html'),
-        })
-    ]
+        }),
+        new VueLoaderPlugin()
+    ],
+
+    module: {
+        rules: [
+            //Vue loader. Says to webpack that files with .vue extension need to be processed by the vue-loader plugin
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            }
+        ]
+    }
 }
