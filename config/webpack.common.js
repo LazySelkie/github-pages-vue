@@ -38,6 +38,11 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ['vue-style-loader', 'css-loader']
+            },
+            //Indicates that png files are assets to be processed by webpack
+            {
+                test: /\.png$/,
+                type: 'asset/resource'
             }
         ]
     }
